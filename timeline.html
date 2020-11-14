@@ -1,0 +1,103 @@
+
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../script/letter-arch.js"></script>
+    <script type="text/javascript">
+      const characters = storychars();
+      let charArray = [];
+      const colorArray = ['#4e79a7','#59a14f','#9c755f','f28e2b','#edc948','#bab0ac','#e15759','#b07aa1','#76b7b2','#ff9da7'];
+      let convoArray = []
+
+/**
+* !create convoArray 
+*/
+      for (let i = 0; i < characters.length; i++) {
+        for (let j = 0; j < characters[i].letters.length; j++) {
+          const currentConversation = characters[i].letters[j].conversation
+          if (convoArray.includes(currentConversation) == false) {
+              convoArray.push(currentConversation)
+          }
+        }
+      }
+
+      console.log(`conversation array is ${convoArray}`);
+
+//       const colorAenna = '#E9D758';
+//       const colorDavian = '#297373';
+//       const colorNiera = '#FF8552';
+//       const colorDrotan = '#E6E6E6';
+// console.log(`character array: ${characters} with length ${characters.length}`)
+
+      // for (let i =0; i < characters.length; i++) {
+      //   for (let l = 0; l < characters[i].letters.length; l++) {
+      //     // console.log(`big loop: ${i}, small loop: ${l});`)
+      //     const firstName = characters[i].firstName;
+      //     const startDate = characters[i].letters[l].dateSent;
+      //     const startDateYear = startDate.slice(-4);
+      //     const startDateMonth = startDate.slice(0,1);
+      //     const startDateDay = startDate.slice(3,4);
+      //     const endDate = characters[i].letters[l].dateReceived
+      //     const endDateYear = startDate.slice(-4);
+      //     const endDateMonth = startDate.slice(0,1);
+      //     const endDateDay = startDate.slice(3,4);
+
+      //     dataTable.push(firstName, new Date(startDateYear, startDateMonth, startDateYear), new Date(endDateYear,endDateMonth,endDateDay))
+      //   }
+        
+      // }
+      // console.log(`charArray array: ${dataTable} with length ${charArray.length}`)
+
+/**
+ * !add column for 'conversation' to clean up table 
+ * */
+
+      google.charts.load('current', {'packages':['timeline']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({type: 'string', id: 'Conversation'});
+        dataTable.addColumn({ type: 'string', id: 'Name' });
+        dataTable.addColumn({type: 'string', role: 'tooltip'})
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+
+        for(let i = 0; i < characters.length; i++) {
+        for (let l = 0; l < characters[i].letters.length; l++) {
+          // console.log(`big loop: ${i}, small loop: ${l});`)
+          const conversation = characters[i].letters[l].conversation
+          const firstName = characters[i].firstName;
+          const tag = characters[i].letters[l].tag;
+          const startDate = characters[i].letters[l].dateSent;
+          // const startDateYear = startDate.slice(-4);
+          // const startDateMonth = startDate.slice(0,1);
+          // const startDateDay = startDate.slice(3,4);
+          const endDate = characters[i].letters[l].dateReceived
+          // const endDateYear = startDate.slice(-4);
+          // const endDateMonth = startDate.slice(0,1);
+          // const endDateDay = startDate.slice(3,4);
+          smallArray = [conversation, firstName, tag, startDate, endDate];
+          console.log(`add ${conversation} ${startDate}`);
+          charArray.push(smallArray);
+        }
+      }
+        // console.log(`dataTable is: ${dataTable}`);
+        
+      dataTable.addRows(charArray)
+
+      var options = {
+      colors: colorArray,
+    };
+
+        chart.draw(dataTable, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="timeline" style="height: 300px;"></div>
+  </body>
+</html>
