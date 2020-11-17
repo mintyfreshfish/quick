@@ -658,7 +658,7 @@ letters: [
     prevLink: '',
     tag: "Ravvi's recovery is hard, and his memories may never return",
     text: ''
-  }
+  },
   {
     id: 'Ze-Su-1',
     conversation: 'Sura/Zephyra',
