@@ -179,6 +179,17 @@ function storychars() {return [
       text: '<i>Attached to gold pouch</i> \n \nDeceiptful She-devil, \nYou think I want your blood money? Get your precious messenger to write you letters. Maybe he actually cares. Or at least would pretend to for enough gold.'
     },
     {
+      id: 'Da-Ae-7',
+      conversation: 'Aenna/Davian',
+      receiver: 'Aenna',
+      dateSent: new Date (730, 8, 25),
+      dateReceived: new Date (730, 8, 30),
+      nextLink: '',
+      prevLink: '',
+      tag: "Davian is in Onnsel for a trade agreement, invites Aenna to see him kind of?",
+      text: ''
+    },
+    {
       id: 'Da-Ze-1',
       conversation: 'Zephyra/Davian',
       receiver: 'Drotan',
@@ -638,6 +649,17 @@ letters: [
     text: '',
   },
   {
+    id: 'Ze-Ni-7',
+    conversation: 'Zephyra/Niera',
+    receiver: 'Niera',
+    dateSent: new Date(730, 8, 24),
+    dateReceived: new Date(730, 8, 29),
+    nextLink: '',
+    prevLink: '',
+    tag: "Ravvi's recovery is hard, and his memories may never return",
+    text: ''
+  }
+  {
     id: 'Ze-Su-1',
     conversation: 'Sura/Zephyra',
     receiver: 'Sura',
@@ -682,7 +704,7 @@ letters: [
     text: '',
   },
   {
-    id: 'Ze-Su-1',
+    id: 'Ze-Su-5',
     conversation: 'Sura/Zephyra',
     receiver: 'Sura',
     dateSent: new Date(730, 5, 6),
@@ -693,7 +715,7 @@ letters: [
     text: '',
   },
   {
-    id: 'Ze-Su-1',
+    id: 'Ze-Su-6',
     conversation: 'Sura/Zephyra',
     receiver: 'Sura',
     dateSent: new Date(730, 7, 27),
@@ -701,6 +723,17 @@ letters: [
     nextLink: '',
     prevLink: '',
     tag: "Info on Niera",
+    text: '',
+  },
+  {
+    id: 'Ze-Su-7',
+    conversation: 'Sura/Zephyra',
+    receiver: 'Sura',
+    dateSent: new Date(730, 8, 25),
+    dateReceived: new Date(730, 8, 30),
+    nextLink: '',
+    prevLink: '',
+    tag: "Zephyra sends more tea, asks about Sura personally",
     text: '',
   },
   {
@@ -800,6 +833,17 @@ letters: [
     nextLink: '',
     prevLink: '',
     tag: "Aenna desperate",
+    text: '',
+  },
+  {
+    id: 'Ze-Da-2',
+    conversation: 'Zephyra/Davian',
+    receiver: 'Davian',
+    dateSent: new Date(730, 9, 1),
+    dateReceived: new Date(730, 9, 6),
+    nextLink: '',
+    prevLink: '',
+    tag: "You're already writing to Aenna? Making new trade rout to Undarmaat and Onnsel",
     text: '',
   },
   {
