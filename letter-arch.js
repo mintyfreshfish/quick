@@ -104,7 +104,18 @@ function storychars() {return [
       nextLink: '/pages/Da-Ae-5.vue',
       tag: 'Aenna pleads that Davian continue writing to her as a way to defend against Freir',
       text: 'Davian, \n I have pulled your bounty. If people are still after you, they come from someone else. \n This is the fifth draft of this letter. You may not be reading, which would make sense given you have no reason to read nor believe the words in this letter. Still, I do not have another place to turn. Perhaps you are right – I burned my bridges. Truth be told, a lot of my current situation came as a surprise, with little time to prepare. \n I promised you gold for information on Selos, but now I will offer you more for less. Keep sending letters. They can be empty for all I care, but at least send envelopes. Freir is still scared of you, and he is a little kinder when he sees one of your letters on the table. I know how pathetic this is, but I am low on options. I will pay you with gold, contracts, or names. If those are not appealing, I am sure I can be useful. Despite how it seems in this letter, I still have a wide range of influence, and am a good asset to have. \n You have no reason to believe any of this, but you are well outside Vothkar borders. There is nothing I can do with empty letters addressed to me from you. Especially because you never intend on coming back. This is an opportunity for you to make an easy profit, and, on the smallest chance that I am not lying to you, it would be a huge favor to me. \n Enjoy your travels,'
-    }
+    },
+    {
+      id: 'Ae-Da-6',
+      conversation: 'Aenna/Davian',
+      receiver: 'Davian',
+      dateSent: new Date (730, 8, 21),
+      dateReceived: new Date (730, 8, 26),
+      nextLink: '',
+      prevLink: '',
+      tag: "Skerpla 21 - Aenna says she doesn't need Davian, but will also still pay for his letters",
+      text: 'Davian, \n I have pulled your bounty. If people are still after you, they come from someone else. \n This is the fifth draft of this letter. You may not be reading, which would make sense given you have no reason to read nor believe the words in this letter. Still, I do not have another place to turn. Perhaps you are right – I burned my bridges. Truth be told, a lot of my current situation came as a surprise, with little time to prepare. \n I promised you gold for information on Selos, but now I will offer you more for less. Keep sending letters. They can be empty for all I care, but at least send envelopes. Freir is still scared of you, and he is a little kinder when he sees one of your letters on the table. I know how pathetic this is, but I am low on options. I will pay you with gold, contracts, or names. If those are not appealing, I am sure I can be useful. Despite how it seems in this letter, I still have a wide range of influence, and am a good asset to have. \n You have no reason to believe any of this, but you are well outside Vothkar borders. There is nothing I can do with empty letters addressed to me from you. Especially because you never intend on coming back. This is an opportunity for you to make an easy profit, and, on the smallest chance that I am not lying to you, it would be a huge favor to me. \n Enjoy your travels,'
+    },
     ],
     sig: '/assets/aenna-sig.png'
   }, // #endregion
