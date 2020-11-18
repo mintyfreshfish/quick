@@ -22,35 +22,6 @@
 
       console.log(`conversation array is ${convoArray}`);
 
-//       const colorAenna = '#E9D758';
-//       const colorDavian = '#297373';
-//       const colorNiera = '#FF8552';
-//       const colorDrotan = '#E6E6E6';
-// console.log(`character array: ${characters} with length ${characters.length}`)
-
-      // for (let i =0; i < characters.length; i++) {
-      //   for (let l = 0; l < characters[i].letters.length; l++) {
-      //     // console.log(`big loop: ${i}, small loop: ${l});`)
-      //     const firstName = characters[i].firstName;
-      //     const startDate = characters[i].letters[l].dateSent;
-      //     const startDateYear = startDate.slice(-4);
-      //     const startDateMonth = startDate.slice(0,1);
-      //     const startDateDay = startDate.slice(3,4);
-      //     const endDate = characters[i].letters[l].dateReceived
-      //     const endDateYear = startDate.slice(-4);
-      //     const endDateMonth = startDate.slice(0,1);
-      //     const endDateDay = startDate.slice(3,4);
-
-      //     dataTable.push(firstName, new Date(startDateYear, startDateMonth, startDateYear), new Date(endDateYear,endDateMonth,endDateDay))
-      //   }
-        
-      // }
-      // console.log(`charArray array: ${dataTable} with length ${charArray.length}`)
-
-/**
- * !add column for 'conversation' to clean up table 
- * */
-
       google.charts.load('current', {'packages':['timeline']});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
@@ -66,24 +37,17 @@
 
         for(let i = 0; i < characters.length; i++) {
         for (let l = 0; l < characters[i].letters.length; l++) {
-          // console.log(`big loop: ${i}, small loop: ${l});`)
           const conversation = characters[i].letters[l].conversation
           const firstName = characters[i].firstName;
-          const tag = characters[i].letters[l].tag;
           const startDate = characters[i].letters[l].dateSent;
-          // const startDateYear = startDate.slice(-4);
-          // const startDateMonth = startDate.slice(0,1);
-          // const startDateDay = startDate.slice(3,4);
-          const endDate = characters[i].letters[l].dateReceived
-          // const endDateYear = startDate.slice(-4);
-          // const endDateMonth = startDate.slice(0,1);
-          // const endDateDay = startDate.slice(3,4);
+          const endDate = characters[i].letters[l].dateReceived;
+          const tag =  `${characters[i].letters[l].dateSent.getMonth()}/${characters[i].letters[l].dateSent.getDate()} ${characters[i].letters[l].id}: ${characters[i].letters[l].tag}`;
+
           smallArray = [conversation, firstName, tag, startDate, endDate];
-          console.log(`add ${conversation} ${startDate}`);
+          console.log(`add ${conversation} at startDate ${startDate} endDate: ${endDate}`);
           charArray.push(smallArray);
         }
       }
-        // console.log(`dataTable is: ${dataTable}`);
         
       dataTable.addRows(charArray)
 

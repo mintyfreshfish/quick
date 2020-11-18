@@ -1,51 +1,3 @@
-/*
-* Ze-Ni-1 sent 4/5
-* Ze-Ni-2 sent 5/2
-* Ze-Ni-3 sent 6/2
-* Ze-Ni-4 sent 6/8
-* Ze-Ni-5 sent 7/4
-* Ze-Ni-6 sent 7/20
- Ni-Ze-1 sent 3/22 
- Ni-Ze-2 sent 4/22
- Ni-Ze-3 sent 5/16
- Ni-Ze-4 sent 6/22
- Da-Ae-1 sent 4/6
- Da-Ae-4 sent 7/14
- Da-Ae-5 sent 8/2
- Da-Ae-6 sent 8/16
- Ae-Da-1
- Ae-Da-2 sent 4/24
- Ae-Da-4 sent 5/24
- Ae-Da-5 sent 7/24
-* Ze-Sk-1 sent 4/5
-* Ze-Sk-2 sent 4/25
-* Ze-Sk-4 sent 6/7
-* Ze-Sk-3 sent 5/8
-* Ze-Sk-5 sent 7/9
-* Sk-Ze-3 sent 7/20
-* Ze-Su-2 sent 4/30
-* Ze-Su-3 sent 5/30
-* Ze-Su-4 sent 7/2
-* Ze-Dr-1 sent 7/1
- Dr-Ze-2 sent 7/20
-* Ze-Vu-1 sent 6/1
-* Vu-Ze-1 sent 6/19
-* Ra-Ni-1 sent 7/22
- Su-Ze-3 sent 6/14
- Su-Ze-4 sent 7/14
- Dr-Sk-1 through 13
- Da-Ae-2
- Ae-Da-3
-? Ze-Su-1
-? Su-Ze-1
- Su-Ze-2
- Da-Ae-3
- Ae-Da-4
- Sk-Ze-1
- Dr-Ze-1
-*/
-
-
 
 function storychars() {return [
   { // ANCHOR Aenna #region[red]
@@ -114,7 +66,18 @@ function storychars() {return [
       nextLink: '',
       prevLink: '',
       tag: "Skerpla 21 - Aenna says she doesn't need Davian, but will also still pay for his letters",
-      text: 'Davian, \n I have pulled your bounty. If people are still after you, they come from someone else. \n This is the fifth draft of this letter. You may not be reading, which would make sense given you have no reason to read nor believe the words in this letter. Still, I do not have another place to turn. Perhaps you are right – I burned my bridges. Truth be told, a lot of my current situation came as a surprise, with little time to prepare. \n I promised you gold for information on Selos, but now I will offer you more for less. Keep sending letters. They can be empty for all I care, but at least send envelopes. Freir is still scared of you, and he is a little kinder when he sees one of your letters on the table. I know how pathetic this is, but I am low on options. I will pay you with gold, contracts, or names. If those are not appealing, I am sure I can be useful. Despite how it seems in this letter, I still have a wide range of influence, and am a good asset to have. \n You have no reason to believe any of this, but you are well outside Vothkar borders. There is nothing I can do with empty letters addressed to me from you. Especially because you never intend on coming back. This is an opportunity for you to make an easy profit, and, on the smallest chance that I am not lying to you, it would be a huge favor to me. \n Enjoy your travels,'
+      text: ''
+    },
+    {
+      id: 'Ae-Da-7',
+      conversation: 'Aenna/Davian',
+      receiver: 'Davian',
+      dateSent: new Date (730, 8, 29),
+      dateReceived: new Date (730, 8, 34),
+      nextLink: '',
+      prevLink: '',
+      tag: "Aenna will not see Davian, and is back to her snipey self",
+      text: ''
     },
     ],
     sig: '/assets/aenna-sig.png'
@@ -198,6 +161,17 @@ function storychars() {return [
       nextLink: '',
       prevLink: '',
       tag: "Davian is in Onnsel for a trade agreement, invites Aenna to see him kind of?",
+      text: ''
+    },
+    {
+      id: 'Da-Ae-8',
+      conversation: 'Aenna/Davian',
+      receiver: 'Aenna',
+      dateSent: new Date (730, 9, 3),
+      dateReceived: new Date (730, 9, 8),
+      nextLink: '',
+      prevLink: '',
+      tag: "Davian again asks Aenna to come visit",
       text: ''
     },
     {
@@ -369,7 +343,7 @@ function storychars() {return [
         dateReceived: new Date (730, 6, 25),
         nextLink: '',
         prevLink: '/pages/Dr-Sk-12',
-        tag: "Skeigi sends back the technique excersize as a composition",
+        tag: "Skeigi sends back the technique exercise as a composition",
         text: 'Skeigi, \n I wasn’t going to write you as often now that you’re back in Littenby, but Moki told me about what you sent to Vuden. He was so proud of how complicated and unintuitive the technique exercise was, and we’re all stumped on how you managed to write something that sounded palatable from it. He can’t play it to speed, so we’ll have to wait for you to come back. \n Seems like things are going better. Keep working.'
       },
     ],
@@ -568,6 +542,28 @@ letters: [
   tag: "Skeigi likes Zephyra's composition, mostly composes for cello/piano now",
   text: '',
 },
+{
+  id: 'Sk-Dr-1',
+  conversation: 'Drotan/Skeigi',
+  receiver: 'Drotan',
+  dateSent: new Date(730, 6, 10),
+  dateReceived: new Date(730, 6, 15),
+  nextLink: '',
+  prevLink: '',
+  tag: "Skeigi wants to buy a piano and touches on the music scene in Littenby",
+  text: '',
+},
+{
+  id: 'Sk-Dr-2',
+  conversation: 'Drotan/Skeigi',
+  receiver: 'Drotan',
+  dateSent: new Date(730, 6, 16),
+  dateReceived: new Date(730, 6, 21),
+  nextLink: '',
+  prevLink: '',
+  tag: "Skeigi smugly sends back his technique exercise",
+  text: '',
+},
 ],
 sig: 'assets/skeigi-sig.png'
 }, // //#endregion
@@ -584,6 +580,17 @@ letters: [
     nextLink: '',
     prevLink: '',
     tag: "Vurmira can't say much, but she thinks Torin is okay",
+    text: ''
+  },
+  {
+    id: 'Vu-Ze-2',
+    conversation: 'Vurmira/Zephyra',
+    receiver: 'Zephyra',
+    dateSent: new Date(730, 8, 9),
+    dateReceived: new Date(730, 8, 14),
+    nextLink: '',
+    prevLink: '',
+    tag: "Vurmira tries to pry for info on Torin and Niera",
     text: ''
   },
 ],
@@ -668,6 +675,17 @@ letters: [
     nextLink: '',
     prevLink: '',
     tag: "Ravvi's recovery is hard, and his memories may never return",
+    text: ''
+  },
+  {
+    id: 'Ze-Ni-8',
+    conversation: 'Zephyra/Niera',
+    receiver: 'Niera',
+    dateSent: new Date(730, 9, 6),
+    dateReceived: new Date(730, 9, 11),
+    nextLink: '',
+    prevLink: '',
+    tag: "Zephyra is sick and she regrets the letter she sent to Skeigi. Ravvi sends Zephyra a note",
     text: ''
   },
   {
@@ -811,6 +829,28 @@ letters: [
     nextLink: '',
     prevLink: '',
     tag: "Finished her composition",
+    text: '',
+  },
+  {
+    id: 'Ze-Sk-7',
+    conversation: 'Zephyra/Skeigi',
+    receiver: 'Skeigi',
+    dateSent: new Date(730, 9, 4),
+    dateReceived: new Date(730, 9, 9),
+    nextLink: '',
+    prevLink: '',
+    tag: "Zephyra is sick and makes Skeigi feel guilty",
+    text: '',
+  },
+  {
+    id: 'Ze-Sk-8',
+    conversation: 'Zephyra/Skeigi',
+    receiver: 'Skeigi',
+    dateSent: new Date(730, 9, 6),
+    dateReceived: new Date(730, 9, 11),
+    nextLink: '',
+    prevLink: '',
+    tag: "Zephyra sends sketches she forgot to send with previous letter",
     text: '',
   },
   {
