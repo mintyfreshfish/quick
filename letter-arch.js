@@ -1039,25 +1039,25 @@ function storychars() {
       lastName: '',
       letters: [
         {
-        id: "Niera's arrest",
+        id: "Arrest-1",
         conversation: 'Events',
         dateSent: new Date (730, 9, 11),
         tag: 'Niera\'s arrest',
       },
       {
-        id: "Niera's arrest",
+        id: "Arrest-2",
         conversation: 'Events',
         dateSent: new Date (730, 9, 16),
         tag: 'Niera\'s arrest',
       },
       {
-        id: "Aenna in Onnsel",
+        id: "Onnsel-1",
         conversation: 'Events',
         dateSent: new Date (730, 9, 25),
         tag: 'Aenna in Onnsel',
       },
       {
-        id: "Aenna in Onnsel",
+        id: "Onnsel-2",
         conversation: 'Events',
         dateSent: new Date (730, 9, 30),
         tag: 'Aenna in Onnsel',
