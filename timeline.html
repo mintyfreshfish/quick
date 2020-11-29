@@ -1,16 +1,37 @@
 <html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="letter-arch.js"></script>
-    <script type="text/javascript">
-      const characters = storychars();
-      let charArray = [];
-      const colorArray = ['#4e79a7','#59a14f','#ff9da7','#9c755f','f28e2b','#edc948','#bab0ac','#e15759','#b07aa1','#76b7b2'];
-      let convoArray = []
 
-/**
-* !create convoArray 
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="letter-arch.js"></script>
+  <script type="text/javascript">
+    const characters = storychars();
+    let charArray = [];
+    const colorArray = ['#4e79a7', '#59a14f', '#ff9da7', '#9c755f', 'f28e2b', '#edc948', '#bab0ac', '#e15759', '#b07aa1', '#76b7b2'];
+    let convoArray = [];
+    let convoList = [];
+    let masterArr = []
+
+/*
+ class Conversation {
+  allLetters:[],
+  tally: 0,
+  constructor(letter) {
+    this.allLetters.push(letter);
+    this.tally = allLetters.length;
+  }
+}
+
+class Letter {
+  constructor(conversation, author, receiver, tag, sendDate) {
+    this.conversation = conversation;
+    this.author = author;
+    this.receiver = receiver;
+    this.tag = tag;
+    this.sendDate = sendDate;
+  }
+}
 */
+
       for (let i = 0; i < characters.length; i++) {
         for (let j = 0; j < characters[i].letters.length; j++) {
           const currentConversation = characters[i].letters[j].conversation
@@ -20,46 +41,66 @@
         }
       }
 
-      console.log(`conversation array is ${convoArray}`);
+    google.charts.load('current', {
+      'packages': ['timeline']
+    });
+    google.charts.setOnLoadCallback(drawChart);
 
-      google.charts.load('current', {'packages':['timeline']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var container = document.getElementById('timeline');
-        var chart = new google.visualization.Timeline(container);
-        var dataTable = new google.visualization.DataTable();
+    function drawChart() {
+      var container = document.getElementById('timeline');
+      var chart = new google.visualization.Timeline(container);
+      var dataTable = new google.visualization.DataTable();
 
-        dataTable.addColumn({type: 'string', id: 'Conversation'});
-        dataTable.addColumn({ type: 'string', id: 'Name' });
-        dataTable.addColumn({type: 'string', role: 'tooltip'})
-        dataTable.addColumn({ type: 'date', id: 'Start' });
-        dataTable.addColumn({ type: 'date', id: 'End' });
+      dataTable.addColumn({
+        type: 'string',
+        id: 'Conversation'
+      });
+      dataTable.addColumn({
+        type: 'string',
+        id: 'Name'
+      });
+      dataTable.addColumn({
+        type: 'string',
+        role: 'tooltip'
+      })
+      dataTable.addColumn({
+        type: 'date',
+        id: 'Start'
+      });
+      dataTable.addColumn({
+        type: 'date',
+        id: 'End'
+      });
 
-        for(let i = 0; i < characters.length; i++) {
+      for (let i = 0; i < characters.length; i++) {
         for (let l = 0; l < characters[i].letters.length; l++) {
           const conversation = characters[i].letters[l].conversation
+          const makeID = `${conversation.slice(0,2)}-${conversation.slice((conversation.indexOf("/")+1),(conversation.indexOf("/")+3))}-${l+1}`
           const firstName = characters[i].firstName;
-          const startDate = characters[i].letters[l].dateSent;
-          const endDate = characters[i].letters[l].dateReceived;
-          const tag =  `${characters[i].letters[l].dateSent.getMonth()}/${characters[i].letters[l].dateSent.getDate()} ${characters[i].letters[l].id}: ${characters[i].letters[l].tag}`;
-
+          let startDate = characters[i].letters[l].dateSent;
+          startDate.setDate(startDate.getDate() - 30);
+          let endDate = new Date(startDate);
+          endDate.setDate(endDate.getDate() + 5);
+          const tag = `${characters[i].letters[l].dateSent.getMonth()}/${characters[i].letters[l].dateSent.getDate()} ${makeID}: ${characters[i].letters[l].tag}`;
           smallArray = [conversation, firstName, tag, startDate, endDate];
           console.log(`add ${conversation} at startDate ${startDate} endDate: ${endDate}`);
           charArray.push(smallArray);
         }
       }
-        
+
       dataTable.addRows(charArray)
 
       var options = {
-      colors: colorArray,
-    };
+        colors: colorArray,
+      };
 
-        chart.draw(dataTable, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="timeline" style="height: 600px;"></div>
-  </body>
+      chart.draw(dataTable, options);
+    }
+  </script>
+</head>
+
+<body>
+  <div id="timeline" style="height: 800px;"></div>
+</body>
+
 </html>
